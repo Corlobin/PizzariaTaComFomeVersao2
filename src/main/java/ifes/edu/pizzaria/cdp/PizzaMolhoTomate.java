@@ -9,11 +9,13 @@ package ifes.edu.pizzaria.cdp;
  *
  * @author Ricardo
  */
-public abstract class Molho extends Ingrediente {
-    
-    public Molho(String nome, int quantidade) {
-        super(nome, quantidade);
+public class PizzaMolhoTomate extends AbstractPizzaOption {
+    public PizzaMolhoTomate(Pizza pizza) {
+        super(pizza);
     }
-
+    @Override
+    public double getPreco() {
+        return pizzaDecorator.getPreco() + 3.00;               
+    }
     
 }

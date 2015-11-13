@@ -9,14 +9,13 @@ package ifes.edu.pizzaria.cdp;
  *
  * @author Ricardo
  */
-public abstract class Queijo extends Ingrediente {
-
-    public Queijo(String nome, int quantidade) {
-        super(nome, quantidade);
+public class PizzaCebola extends AbstractPizzaOption {
+    public PizzaCebola(Pizza pizza) {
+        super(pizza);
     }
     @Override
-    public String toString() {
-        return "queijo " + nome;
+    public double getPreco() {
+        return pizzaDecorator.getPreco() + 3.00;               
     }
     
 }

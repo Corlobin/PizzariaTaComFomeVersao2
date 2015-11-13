@@ -12,8 +12,8 @@ import ifes.edu.pizzaria.cdp.*;
  * @author Ricardo
  */
 public interface Fabrica {
-    public Massa criarMassa();
-    public Recheio criarRecheio();
-    public Molho criarMolho();
+    public Pizza criarMassa(Pizza pizza);
+    public Pizza criarRecheio(Pizza pizza);
+    public Pizza criarMolho(Pizza pizza);
     public Pizza criarPizza();
 }

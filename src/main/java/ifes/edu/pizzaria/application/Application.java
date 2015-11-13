@@ -15,9 +15,9 @@ import ifes.edu.pizzaria.util.FabricaPizza;
 public class Application {
     public static void main(String args[]) {
         Pizza mussarela = FabricaPizza.criarPizza("Mussarela tradicional");
-        System.out.println("Mussarela " + mussarela);
+        System.out.println("Mussarela " + mussarela.getPreco());
         Pizza presunto = FabricaPizza.criarPizza("Quatro queijos tradicional");
-        System.out.println("Quatro queijos " + presunto);
+        System.out.println("Quatro queijos " + presunto.getPreco());
         
     }
 }

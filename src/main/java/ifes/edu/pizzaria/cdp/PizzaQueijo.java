@@ -7,24 +7,15 @@ package ifes.edu.pizzaria.cdp;
 
 /**
  *
- * @author 20122bsi0387
+ * @author Ricardo
  */
-public class Pizza {
-    private double valor;
-
-    public Pizza() {
+public abstract class PizzaQueijo extends AbstractPizzaOption {
+    public PizzaQueijo(Pizza pizza) {
+        super(pizza);
     }
-
-    public Pizza(double valor) {
-        this.valor = valor;
-    }
-
+    @Override
     public double getPreco() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
+        return pizzaDecorator.getPreco() + 1.00;               
     }
     
 }

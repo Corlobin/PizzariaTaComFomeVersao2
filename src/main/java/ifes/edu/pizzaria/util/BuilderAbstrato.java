@@ -5,6 +5,8 @@
  */
 package ifes.edu.pizzaria.util;
 
+
+import ifes.edu.pizzaria.cdp.AbstractPizzaOption;
 import ifes.edu.pizzaria.cdp.Pizza;
 
 /**
@@ -17,17 +19,17 @@ public class BuilderAbstrato implements Builder {
     
     @Override
     public void prepararMassa() {
-        pizza.setMassa(fabrica.criarMassa());
+        pizza = fabrica.criarMassa(pizza);
     }
 
     @Override
     public void prepararRecheio() {
-        pizza.setRecheio(fabrica.criarRecheio());
+        pizza = fabrica.criarRecheio(pizza);
     }
 
     @Override
     public void prepararMolho() {
-        pizza.setMolho(fabrica.criarMolho());
+        pizza = fabrica.criarMolho(pizza);
     
     }
 

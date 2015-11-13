@@ -9,18 +9,13 @@ package ifes.edu.pizzaria.cdp;
  *
  * @author Ricardo
  */
-public abstract class Massa {
-    private String massa;
-
-    public Massa(String massa) {
-        this.massa = massa;
+public class PizzaPresunto extends AbstractPizzaOption {
+     public PizzaPresunto(Pizza pizza) {
+        super(pizza);
+    }
+    @Override
+    public double getPreco() {
+        return pizzaDecorator.getPreco() + 3.00;               
     }
     
-    public String getMassa() {
-        return massa;
-    }
-
-    public void setMassa(String massa) {
-        this.massa = massa;
-    }
 }

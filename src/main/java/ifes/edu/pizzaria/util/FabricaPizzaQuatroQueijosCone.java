@@ -14,26 +14,28 @@ import java.util.ArrayList;
  */
 public class FabricaPizzaQuatroQueijosCone implements Fabrica {
 
-  @Override
-    public Massa criarMassa() {
-        MassaCone massa = MassaCone.getInstance();
-        return massa;
+    @Override
+    public Pizza criarMassa(Pizza pizza) {
+        pizza = new PizzaMassaTradicional(pizza);
+        return pizza;               
     }
 
     @Override
-    public Recheio criarRecheio() {
-        QueijoParmesao queijo1 = QueijoParmesao.getInstance();
-        QueijoMussarela queijo2 = QueijoMussarela.getInstance();
-        ArrayList<Ingrediente> ingredientes = new ArrayList<>();
-        ingredientes.add(queijo1);
-        ingredientes.add(queijo2);
-        return new Recheio(ingredientes);        
+    public Pizza criarRecheio(Pizza pizza) {
+        pizza = new PizzaQueijoParmesao(pizza);
+        pizza = new PizzaQueijoMussarela(pizza);
+        pizza = new PizzaQueijoMargherita(pizza);
+        pizza = new PizzaQueijoProvolone(pizza);
+        pizza = new PizzaQueijoGorgonzola(pizza);
+        pizza = new PizzaCebola(pizza);
+        pizza = new PizzaPresunto(pizza);
+        return pizza;
     }
 
     @Override
-    public Molho criarMolho() {
-        Molho molho = MolhoTomate.getInstance();
-        return molho;
+    public Pizza criarMolho(Pizza pizza) {
+        pizza = new PizzaMolhoTomate(pizza);
+        return pizza;
     }
 
     @Override
