@@ -12,5 +12,8 @@ import ifes.edu.pizzaria.cdp.Pizza;
  * @author Ricardo
  */
 public interface Director {
+    /*
+        Fachada ja implementado!
+    */
     public Pizza criarPizza(Builder cozinheiro);
 }

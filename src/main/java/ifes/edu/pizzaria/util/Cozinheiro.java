@@ -13,8 +13,7 @@ import ifes.edu.pizzaria.cdp.Pizza;
  */
 public class Cozinheiro implements Director {
     public Pizza criarPizza(Builder cozinheiro) {
-        Pizza pizza;
-        
+        Pizza pizza;        
         cozinheiro.prepararMassa();
         cozinheiro.prepararMolho();
         cozinheiro.prepararRecheio();
