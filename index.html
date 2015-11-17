@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Pizzariatacomfomeversao2 by Corlobin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Pizzariatacomfomeversao2</h1>
+      <h2 class="project-tagline">Com padroes decorator, ponte, etc etc</h2>
+      <a href="https://github.com/Corlobin/PizzariaTaComFomeVersao2" class="btn">View on GitHub</a>
+      <a href="https://github.com/Corlobin/PizzariaTaComFomeVersao2/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/Corlobin/PizzariaTaComFomeVersao2/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="pizzaria-la-brasilia-" class="anchor" href="#pizzaria-la-brasilia-" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pizzaria la Brasilia </h1>
+
+<h3>
+<a id="visão-geral-do-problema" class="anchor" href="#vis%C3%A3o-geral-do-problema" aria-hidden="true"><span class="octicon octicon-link"></span></a>Visão geral do problema</h3>
+
+<blockquote>
+<p><strong>A pizzaria</strong></p>
+
+<p>A pizzaria “Tá com fome” é especialista em desenvolver pizzas em formato de cone e pizzas
+tradicionais. As pizzas podem possuir os seguintes ingredientes: massa pizza tradicional, massa
+pizza cone, molho de tomate, queijo parmesão, queijo mussarela, queijo margherita, queijo
+provolone, queijo gongorzola, cebola e presunto. Atualmente o cozinheiro prepara as seguintes
+pizzas:</p>
+
+<ul>
+<li>a. Mussarela:</li>
+<li>i. Ingredientes: massa, molho de tomate, queijo mussarela, queijo gongorzola, cebola</li>
+<li>e presunto;</li>
+<li>b. Quatro queijos:</li>
+<li>i. Ingredientes: massa, molho de tomate, queijo parmesão, queijo mussarela, queijo margherita, queijo provolone, queijo gongorzola, cebola e presunto;</li>
+</ul>
+
+<p>É importante ressaltar que a massa é modifica conforme o tipo da pizza, ou seja, caso a pizza
+seja tradicional é utilizado a massa pizza tradicional. Caso contrário, a massa escolhida é a
+massa pizza cone. Cada componente da pizza possui um valor distinto. Os queijos custam 1,00. O molho de
+tomate, a cebola e o presunto custam 3,00, cada um. A massa tradicional custa 5,00
+e a massa de cone custa 10,00. A soma de cada componente é o valor da pizza. Cada
+classe possui um método preço. Para melhorar o desempenho da pizzaria será desenvolvido um software para gerenciar o preparo das pizzas. O projetista especificou as seguintes decisões de projeto:</p>
+
+<ul>
+<li> Utilizar o padrão decorador para criar as pizzas;</li>
+<li>Utilizar o padrão ponte para separar implementação das interfaces;</li>
+<li>Utilizar o padrão fachada;</li>
+<li>Utilizar o padrão peso-mosca;</li>
+</ul>
+</blockquote>
+
+<h3>
+<a id="utilização-dos-padrões" class="anchor" href="#utiliza%C3%A7%C3%A3o-dos-padr%C3%B5es" aria-hidden="true"><span class="octicon octicon-link"></span></a>Utilização dos padrões</h3>
+
+<p>O padrão <strong>decorator</strong> ele tem como proposito adicionar responsabilidades à um objeto dinamicamente. Quando um cliente compra uma pizza, ele tem a opção de pedir uma pizza de mussarela e uma de quatro queijos, de forma a escolher se ela é de cone ou uma tradicional. Para definir os preços das pizzas, esta é realizada dinamicamente, de modo que o preço dela no final é a soma de todos os preços dos ingredientes (cebola, queijos...). Tudo isso dinamicamente.</p>
+
+<p>O padrão <strong>Bridge</strong> ou ponte tem como proposito desacoplar a abstração da sua implementação. A pizza é criada e adicionada o molho, massa, recheio sem a necessidade de nenhum componente ser modificado. Como pode ver, se eu necessitar criar uma pizza tradicional de mussarela com o dobro de recheio basta apenas eu criar um novo BridgeImp chamado "PizzaTradicionalBridgeImpl" e criar um novo metodo "dobrarRecheio" sem a necessidade de modificar o Builder.</p>
+
+<p>O padrão <strong>Facade</strong> tem como proposito prover uma interface única para acessar um conjunto de interfaces. Dessa forma, o padrão define uma interface de alto nível para acessar os subsistemas. Para criar uma pizza, é necessário executar uma sequência de atividades que envolvem diversos objetos. Desse modo, o facade da pizzaria é o nosso FabricaPizza. Abaixo segue um exemplo de como ele seria e depois temos o diagrama de classes com ele <em>completo</em> </p>
+
+<p><img src="https://raw.githubusercontent.com/Corlobin/PizzariaTaComFomeVersao2/master/FACADE.png" alt="Facade"></p>
+
+<p>O padrão <strong>Flyweight</strong> ou peso mosca tem como objetivo usar o compartilhamento para suportar de forma eficiênte grandes quantidades de objetos. Na nossa pizzaria, as vezes quando tem um rodizio, seria necessário criar diversas pizzas de mussarelas, ou quatro queijos. Desse modo, utilizando o padrão flyweight nós podemos criar as pizzas e compartilha-las de modo a criar menos memoria para o programa.</p>
+
+<h3>
+<a id="diagrama-de-classes" class="anchor" href="#diagrama-de-classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Diagrama de classes</h3>
+
+<p><img src="https://raw.githubusercontent.com/Corlobin/PizzariaTaComFomeVersao2/master/DIAGRAMA%20ESTRUTURAIS.png" alt="Diagrama"></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/Corlobin/PizzariaTaComFomeVersao2">Pizzariatacomfomeversao2</a> is maintained by <a href="https://github.com/Corlobin">Corlobin</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
