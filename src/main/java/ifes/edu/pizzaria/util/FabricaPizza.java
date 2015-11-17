@@ -12,19 +12,13 @@ import java.util.HashMap;
  *
  * @author Ricardo
  */
-public class FabricaPizza {
-    private static final HashMap<String, Builder> builders = new HashMap<>();    
-    static {
-        builders.put("Mussarela tradicional", new FabricaPizzaMussarelaBuilder());
-        builders.put("Quatro queijos tradicional", new FabricaPizzaQuatroQueijosBuilder());
-        builders.put("Mussarela cone", new FabricaPizzaMussarelaConeBuilder());
-        builders.put("Quatro queijos cone", new FabricaPizzaQuatroQueijosConeBuilder());
-    }
-    public static Pizza criarPizza(String nome) {
-        
+public class FabricaPizza { 
+    public static Pizza criarPizza(String nome) {  
         Cozinheiro cozinheiro = new Cozinheiro();
-        Builder builder = builders.get(nome);
-        Pizza pizza = cozinheiro.criarPizza(builder);
+        PizzaFlyweightFactory factory = new PizzaFlyweightFactory();        
+        Builder builder = factory.getBuilder(nome);
+        BridgePizza bridge = new BridgePizzaImpl(builder);
+        Pizza pizza = cozinheiro.criarPizza(bridge);
         return pizza;
     }
 }

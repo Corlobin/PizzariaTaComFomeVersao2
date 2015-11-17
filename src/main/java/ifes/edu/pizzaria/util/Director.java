@@ -15,5 +15,5 @@ public interface Director {
     /*
         Fachada ja implementado!
     */
-    public Pizza criarPizza(Builder cozinheiro);
+    public Pizza criarPizza(BridgePizza cozinheiro);
 }

@@ -6,18 +6,14 @@
 package ifes.edu.pizzaria.util;
 
 import ifes.edu.pizzaria.cdp.Pizza;
-
+import ifes.edu.pizzaria.util.BridgePizza;
 /**
  *
  * @author Ricardo
  */
 public class Cozinheiro implements Director {
-    public Pizza criarPizza(Builder cozinheiro) {
-        Pizza pizza;        
-        cozinheiro.prepararMassa();
-        cozinheiro.prepararMolho();
-        cozinheiro.prepararRecheio();
-        pizza = cozinheiro.colocarForno();
-        return pizza;
+    @Override
+    public Pizza criarPizza(BridgePizza cozinheiro) {
+        return cozinheiro.fazerPizza();
     }
 }

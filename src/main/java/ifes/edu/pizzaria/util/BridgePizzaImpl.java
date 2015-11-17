@@ -10,10 +10,10 @@ package ifes.edu.pizzaria.util;
  *
  * @author 20122BSI0387
  */
-public class BridgePizzaMussarela extends BridgePizza {
+public class BridgePizzaImpl extends BridgePizza{
 
-    public BridgePizzaMussarela(Builder builder) {
+    public BridgePizzaImpl(Builder builder) {
         super(builder);
     }
-    
+   
 }

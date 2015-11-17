@@ -16,17 +16,11 @@ public abstract class BridgePizza {
         this.pizza = pizza;
     }
     
-    public void fazerMassa() {
+    public Pizza fazerPizza(){
         pizza.prepararMassa();
-    }
-    public void fazerRecheio() {
-       pizza.prepararRecheio();
-    }
-    public void fazerMolho() {
+        pizza.prepararRecheio();
         pizza.prepararMolho();
-    }
-    public void fazerPizza() {
-        pizza.colocarForno();
+        return pizza.colocarForno();
     }
     
 }
